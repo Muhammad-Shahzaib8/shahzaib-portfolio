@@ -1,5 +1,48 @@
+import { useState } from "react";
 
 function Contact() {
+  const [status, setStatus] = useState("idle");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    setStatus("sending");
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    formData.append(
+      "access_key",
+      import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    );
+
+    formData.append(
+      "subject",
+      `New Portfolio Message - ${formData.get("subject")}`
+    );
+
+    formData.append("from_name", "Shahzaib Portfolio");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setStatus("error");
+    }
+  };
+
   return (
     <section id="contact" className="contact section">
       <div className="section-container">
@@ -53,12 +96,11 @@ function Contact() {
                 </div>
               </a>
 
-
               {/* GitHub */}
               <a
                 href="https://github.com/Muhammad-Shahzaib8"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="contact-info-item"
               >
                 <div className="contact-info-icon">
@@ -73,12 +115,11 @@ function Contact() {
                 </div>
               </a>
 
-
               {/* LinkedIn */}
               <a
                 href="#"
                 className="contact-info-item"
-                onClick={(e) => e.preventDefault()}
+                onClick={(event) => event.preventDefault()}
               >
                 <div className="contact-info-icon">
                   in
@@ -95,9 +136,8 @@ function Contact() {
             </div>
           </div>
 
-
           {/* =========================
-              RIGHT SIDE - FORM
+              RIGHT SIDE
           ========================= */}
           <div className="contact-form-container">
 
@@ -116,17 +156,15 @@ function Contact() {
 
             </div>
 
-
             <form
               className="contact-form"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
 
               {/* Name + Email */}
               <div className="form-row">
 
                 <div className="form-group">
-
                   <label htmlFor="name">
                     Your Name
                   </label>
@@ -138,12 +176,9 @@ function Contact() {
                     placeholder="Enter your name"
                     required
                   />
-
                 </div>
 
-
                 <div className="form-group">
-
                   <label htmlFor="email">
                     Email Address
                   </label>
@@ -155,11 +190,9 @@ function Contact() {
                     placeholder="Enter your email"
                     required
                   />
-
                 </div>
 
               </div>
-
 
               {/* Subject */}
               <div className="form-group">
@@ -178,7 +211,6 @@ function Contact() {
 
               </div>
 
-
               {/* Message */}
               <div className="form-group">
 
@@ -196,15 +228,38 @@ function Contact() {
 
               </div>
 
-
               {/* Submit */}
               <button
                 type="submit"
                 className="contact-button"
+                disabled={status === "sending"}
               >
-                <span>Send Message</span>
-                <span>→</span>
+                <span>
+                  {status === "sending"
+                    ? "Sending..."
+                    : "Send Message"}
+                </span>
+
+                <span>
+                  {status === "sending" ? "..." : "→"}
+                </span>
               </button>
+
+              {/* Success Message */}
+              {status === "success" && (
+                <div className="form-message success-message">
+                  ✓ Your message has been sent successfully.
+                  I'll get back to you as soon as possible.
+                </div>
+              )}
+
+              {/* Error Message */}
+              {status === "error" && (
+                <div className="form-message error-message">
+                  ✕ Something went wrong. Please try again or
+                  contact me directly by email.
+                </div>
+              )}
 
             </form>
 
