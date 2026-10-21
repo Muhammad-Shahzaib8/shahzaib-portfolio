@@ -32,7 +32,7 @@ function Experience() {
                   </span>
 
                   <span className="experience-date">
-                    July 20, 2026 — Present
+                    July 20, 2026 — October 31,2026
                   </span>
                 </div>
 
@@ -49,11 +49,11 @@ function Experience() {
             <div className="experience-body">
 
               <p>
-                Teaching computer science and programming concepts with
-                a practical and student-focused approach. Preparing
+                Teach computer science and programming concepts with
+                a practical and student-focused approach. Prepared
                 lectures, learning material, and practical exercises to
                 help students understand programming and core computer
-                science concepts.Also providing services as a Web Developer.
+                science concepts.Also provided services as a Web Developer.
               </p>
 
               <div className="experience-responsibilities">
@@ -61,7 +61,7 @@ function Experience() {
                 <div className="responsibility">
                   <span>01</span>
                   <p>
-                    Deliver programming and computer science lectures
+                    Delivered programming and computer science lectures
                     using practical examples and projects.
                   </p>
                 </div>
@@ -69,7 +69,7 @@ function Experience() {
                 <div className="responsibility">
                   <span>02</span>
                   <p>
-                    Prepare educational material, assignments, and
+                    Prepared educational material, assignments, and
                     practical programming exercises.
                   </p>
                 </div>
@@ -85,7 +85,7 @@ function Experience() {
               </div>
 
               <div className="experience-skills">
-                <span>Teaching</span>
+                <span>Teach</span>
                 <span>Programming</span>
                 <span>Computer Science</span>
                 <span>Technical Communication</span>
