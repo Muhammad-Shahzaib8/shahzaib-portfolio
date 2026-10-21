@@ -3,25 +3,20 @@ function Education() {
   return (
     <section className="education section" id="education">
       <div className="section-container">
-
-        {/* Section Header */}
         <div className="section-heading">
           <p>MY ACADEMIC JOURNEY</p>
           <h2>Education</h2>
         </div>
 
-        {/* Education Timeline */}
         <div className="education-timeline">
 
-          {/* ================= MATRICULATION ================= */}
+          {/* MATRICULATION */}
           <div className="education-item">
-
             <div className="education-marker">
               <span>01</span>
             </div>
 
             <div className="education-card">
-
               <div className="education-card-header">
                 <div>
                   <span className="education-level">
@@ -43,27 +38,20 @@ function Education() {
 
               <div className="education-card-footer">
                 <p>
-                  Successfully completed secondary education with
-                  excellent academic performance and achieved
-                 
+                  Completed secondary education with a strong
+                  academic foundation.
                 </p>
-
-              
               </div>
-
             </div>
           </div>
 
-
-          {/* ================= INTERMEDIATE ================= */}
+          {/* INTERMEDIATE */}
           <div className="education-item">
-
             <div className="education-marker">
               <span>02</span>
             </div>
 
             <div className="education-card">
-
               <div className="education-card-header">
                 <div>
                   <span className="education-level">
@@ -85,31 +73,24 @@ function Education() {
 
               <div className="education-card-footer">
                 <p>
-                  Completed intermediate education with a strong
-                  academic record and achieved
-                
+                  Completed intermediate education with a
+                  background in pre-medical sciences.
                 </p>
-
-               
               </div>
-
             </div>
           </div>
 
-
-          {/* ================= BACHELOR'S ================= */}
+          {/* BACHELOR'S */}
           <div className="education-item">
-
             <div className="education-marker">
               <span>03</span>
             </div>
 
             <div className="education-card">
-
               <div className="education-card-header">
                 <div>
                   <span className="education-level">
-                    UNIVERSITY EDUCATION
+                    UNDERGRADUATE EDUCATION
                   </span>
 
                   <h3>
@@ -130,21 +111,54 @@ function Education() {
 
               <div className="education-card-footer">
                 <p>
-                  Completed a Bachelor's degree in Information
-                  Technology with a focus on software development,
-                  databases, web technologies, programming, and
-                  artificial intelligence. 
-                 
+                  Studied programming, software development,
+                  databases, web technologies, and computing
+                  fundamentals.
                 </p>
+              </div>
+            </div>
+          </div>
 
-               
+          {/* MASTER'S */}
+          <div className="education-item">
+            <div className="education-marker">
+              <span>04</span>
+            </div>
+
+            <div className="education-card">
+              <div className="education-card-header">
+                <div>
+                  <span className="education-level">
+                    POSTGRADUATE EDUCATION
+                  </span>
+
+                  <h3>
+                    Master of Science in Computer Science
+                  </h3>
+
+                  <h4>
+                    [Muhammad Nawaz Shareef University of Agriculture Multan]
+                  </h4>
+                </div>
+
+                <div className="education-score">
+                  <strong>In Progress</strong>
+                  <span>MS COMPUTER SCIENCE</span>
+                </div>
               </div>
 
+              <div className="education-card-footer">
+                <p>
+                  Exploring advanced computer science topics,
+                  artificial intelligence, machine learning,
+                  and transformer-based weed detection for
+                  precision agriculture.
+                </p>
+              </div>
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+
 function About() {
   return (
     <section className="about section" id="about">
@@ -10,49 +11,63 @@ function About() {
 
         <div className="about-content">
           <div className="about-text">
-            <h3>Building solutions with code and creativity.</h3>
+            <h3>
+              Exploring AI research and building meaningful solutions.
+            </h3>
 
             <p>
-              I'm Muhammad Shahzaib, a web developer and Python developer
-              interested in building practical software solutions and
-              AI-powered applications.
+              I'm Muhammad Shahzaib, a Computer Science postgraduate
+              student and developer interested in Artificial
+              Intelligence, Machine Learning, and modern software
+              development.
             </p>
 
             <p>
-              I enjoy turning real-world problems into useful, responsive,
-              and user-friendly applications. My experience includes web
-              development, backend development, databases, and AI/ML
-              projects.
+              My current research interest is transformer-based weed
+              detection, exploring how computer vision can help identify
+              weeds in agricultural fields and contribute to smarter,
+              more precise weed management.
             </p>
 
             <p>
-              I'm continuously improving my technical skills and building
-              real-world projects to grow as a professional developer.
+              Alongside research, I build responsive web applications,
+              Python-based tools, backend APIs, and database-driven
+              systems. I enjoy connecting academic knowledge with
+              practical projects that solve real-world problems.
+            </p>
+
+            <p>
+              I'm continuously developing my skills in AI, deep learning,
+              software engineering, and research methodology to create
+              useful and impactful technology.
             </p>
           </div>
 
           <div className="about-highlights">
             <div className="highlight-card">
               <span>01</span>
-              <h4>Web Development</h4>
+              <h4>AI & Computer Vision</h4>
               <p>
-                Responsive and database-driven web applications.
+                Exploring machine learning and transformer models
+                for visual recognition tasks.
               </p>
             </div>
 
             <div className="highlight-card">
               <span>02</span>
-              <h4>Python & AI</h4>
+              <h4>Smart Agriculture</h4>
               <p>
-                Python applications, APIs and AI-powered solutions.
+                Researching weed detection approaches for
+                precision agriculture applications.
               </p>
             </div>
 
             <div className="highlight-card">
               <span>03</span>
-              <h4>Problem Solving</h4>
+              <h4>Software Development</h4>
               <p>
-                Turning real-world requirements into practical software.
+                Building responsive web apps, Python tools,
+                APIs, and database-driven systems.
               </p>
             </div>
           </div>

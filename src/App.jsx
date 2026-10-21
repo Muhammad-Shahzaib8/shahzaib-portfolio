@@ -1,8 +1,10 @@
+
 import Navbar from "./components/Navbar";
 
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
+import Research from "./components/Research";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
 import Education from "./sections/Education";
@@ -17,6 +19,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Research />
         <Projects />
         <Experience />
         <Education />

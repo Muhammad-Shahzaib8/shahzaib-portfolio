@@ -3,8 +3,6 @@ function Experience() {
   return (
     <section className="experience section" id="experience">
       <div className="section-container">
-
-        {/* Section Heading */}
         <div className="section-heading">
           <p>PROFESSIONAL JOURNEY</p>
           <h2>Experience</h2>
@@ -12,154 +10,129 @@ function Experience() {
         </div>
 
         <div className="experience-wrapper">
-
-          {/* =========================
-              CURRENT TEACHING ROLE
-          ========================== */}
+          {/* CURRENT TEACHING ROLE */}
           <article className="experience-card current-role">
-
             <div className="experience-top">
-
-              <div className="experience-number">
-                01
-              </div>
+              <div className="experience-number">01</div>
 
               <div className="experience-heading">
-
                 <div className="experience-meta">
                   <span className="experience-status">
-                    Last Role
+                    previous ROLE
                   </span>
 
                   <span className="experience-date">
-                    July 20, 2026 — October 31,2026
+                    July 20, 2026 — October 22, 2026
                   </span>
                 </div>
 
-                <h3>IT Professor</h3>
+                <h3>Computer Science Teacher</h3>
 
                 <h4>
-                  Muslim Group of Schools & Colleges, Multan
+                  Muslim Group of Schools &amp; Colleges, Multan
                 </h4>
-
               </div>
-
             </div>
 
             <div className="experience-body">
-
               <p>
-                Teach computer science and programming concepts with
-                a practical and student-focused approach. Prepared
-                lectures, learning material, and practical exercises to
-                help students understand programming and core computer
-                science concepts.Also provided services as a Web Developer.
+                Teach computer science and programming concepts
+                through practical examples, structured lectures,
+                and student-focused learning activities. Prepare
+                educational materials and programming exercises
+                to help students develop their technical knowledge
+                and problem-solving skills.
               </p>
 
               <div className="experience-responsibilities">
-
                 <div className="responsibility">
                   <span>01</span>
                   <p>
-                    Delivered programming and computer science lectures
-                    using practical examples and projects.
+                    Deliver computer science and programming
+                    lessons using clear explanations and practical
+                    examples.
                   </p>
                 </div>
 
                 <div className="responsibility">
                   <span>02</span>
                   <p>
-                    Prepared educational material, assignments, and
-                    practical programming exercises.
+                    Prepare lecture notes, assignments, assessments,
+                    and practical programming exercises.
                   </p>
                 </div>
 
                 <div className="responsibility">
                   <span>03</span>
                   <p>
-                    Explain databases, operating systems, networking,
-                    and programming concepts.
+                    Explain programming, databases, operating
+                    systems, and computer networking concepts.
                   </p>
                 </div>
-
               </div>
 
               <div className="experience-skills">
-                <span>Teach</span>
+                <span>Teaching</span>
                 <span>Programming</span>
                 <span>Computer Science</span>
+                <span>Lesson Planning</span>
                 <span>Technical Communication</span>
               </div>
-
             </div>
-
           </article>
 
-
-          {/* =========================
-              SOFTWARE DEVELOPMENT
-          ========================== */}
+          {/* INDEPENDENT SOFTWARE DEVELOPMENT */}
           <article className="experience-card">
-
             <div className="experience-top">
-
-              <div className="experience-number">
-                02
-              </div>
+              <div className="experience-number">02</div>
 
               <div className="experience-heading">
-
                 <div className="experience-meta">
                   <span className="experience-type">
-                    SOFTWARE DEVELOPMENT
+                    INDEPENDENT PROJECTS
                   </span>
                 </div>
 
                 <h3>Web Developer / Software Developer</h3>
 
-                <h4>
-                  Independent Projects & Development
-                </h4>
-
+                <h4>Independent Software Development</h4>
               </div>
-
             </div>
 
             <div className="experience-body">
-
               <p>
-                Designed and developed practical web and software
-                applications focused on real-world requirements,
-                database management, automation, and AI-powered
-                functionality.
+                Design and develop web and software projects
+                that address practical requirements, including
+                academic record management, database-driven
+                applications, APIs, and AI-powered functionality.
               </p>
 
               <div className="experience-responsibilities">
-
                 <div className="responsibility">
                   <span>01</span>
                   <p>
-                    Developed responsive web applications with
-                    authentication, dashboards, and database systems.
+                    Develop responsive web applications with
+                    user authentication, dashboards, and database
+                    management features.
                   </p>
                 </div>
 
                 <div className="responsibility">
                   <span>02</span>
                   <p>
-                    Built backend APIs and applications using Python,
-                    FastAPI, PHP, and Django.
+                    Build backend applications and APIs using
+                    Python, FastAPI, PHP, and Django.
                   </p>
                 </div>
 
                 <div className="responsibility">
                   <span>03</span>
                   <p>
-                    Integrated AI features into practical applications
-                    and developed machine learning projects.
+                    Develop AI-related projects and explore
+                    machine learning and computer vision
+                    applications.
                   </p>
                 </div>
-
               </div>
 
               <div className="experience-skills">
@@ -171,25 +144,15 @@ function Experience() {
                 <span>MySQL</span>
                 <span>AI / ML</span>
               </div>
-
             </div>
-
           </article>
 
-
-          {/* =========================
-              PEPSICO
-          ========================== */}
+          {/* PEPSICO EXPERIENCE */}
           <article className="experience-card">
-
             <div className="experience-top">
-
-              <div className="experience-number">
-                03
-              </div>
+              <div className="experience-number">03</div>
 
               <div className="experience-heading">
-
                 <div className="experience-meta">
                   <span className="experience-type">
                     PROFESSIONAL EXPERIENCE
@@ -202,65 +165,54 @@ function Experience() {
 
                 <h3>Data Entry Operator</h3>
 
-                <h4>
-                  PepsiCo
-                </h4>
-
+                <h4>PepsiCo</h4>
               </div>
-
             </div>
 
             <div className="experience-body">
-
               <p>
-                Responsible for accurate data entry, record management,
-                information verification, and maintaining organized
-                digital records while supporting day-to-day
-                administrative operations.
+                Supported data entry and record-management
+                activities, with an emphasis on accurate
+                information handling, data verification, and
+                organized digital documentation.
               </p>
 
               <div className="experience-responsibilities">
-
                 <div className="responsibility">
                   <span>01</span>
                   <p>
-                    Entered and updated business information accurately
-                    in digital systems.
+                    Enter and update information in digital
+                    records with attention to accuracy.
                   </p>
                 </div>
 
                 <div className="responsibility">
                   <span>02</span>
                   <p>
-                    Verified data and maintained accurate records and
-                    documentation.
+                    Review information for errors and help
+                    maintain consistent records.
                   </p>
                 </div>
 
                 <div className="responsibility">
                   <span>03</span>
                   <p>
-                    Organized digital records while maintaining
-                    attention to detail and data accuracy.
+                    Organize digital documentation and support
+                    routine administrative tasks.
                   </p>
                 </div>
-
               </div>
 
               <div className="experience-skills">
                 <span>Data Entry</span>
-                <span>Data Management</span>
-                <span>MS Office</span>
                 <span>Record Keeping</span>
                 <span>Data Verification</span>
+                <span>Digital Documentation</span>
+                <span>Attention to Detail</span>
               </div>
-
             </div>
-
           </article>
-
         </div>
-
       </div>
     </section>
   );

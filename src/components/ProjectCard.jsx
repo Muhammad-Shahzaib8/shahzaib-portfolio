@@ -1,29 +1,35 @@
+
 function ProjectCard({ project, number }) {
+  const projectNumber = String(number).padStart(2, "0");
+
+  const hasGithub =
+    project.github && project.github !== "#";
+
+  const hasDemo =
+    project.demo && project.demo !== "#";
+
   return (
     <article className="project-card">
-
-      {/* Project Visual */}
       <div className="project-image">
         {project.image ? (
           <img
             src={project.image}
             alt={`${project.title} preview`}
+            loading="lazy"
           />
         ) : (
           <div className="project-placeholder">
-            <span>{String(number).padStart(2, "0")}</span>
+            <span>{projectNumber}</span>
             <p>{project.category}</p>
           </div>
         )}
 
         <div className="project-overlay">
-          <span>PROJECT {String(number).padStart(2, "0")}</span>
+          <span>PROJECT {projectNumber}</span>
         </div>
       </div>
 
-      {/* Project Content */}
       <div className="project-content">
-
         <p className="project-category">
           {project.category}
         </p>
@@ -34,42 +40,40 @@ function ProjectCard({ project, number }) {
           {project.description}
         </p>
 
-        {/* Technologies */}
         <div className="technology-list">
-          {project.technologies.map((technology, index) => (
-            <span key={index}>
+          {project.technologies.map((technology) => (
+            <span key={technology}>
               {technology}
             </span>
           ))}
         </div>
 
-        {/* Links */}
-        <div className="project-links">
+        {(hasGithub || hasDemo) && (
+          <div className="project-links">
+            {hasGithub && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${project.title} source code on GitHub`}
+              >
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+            )}
 
-          {project.github && project.github !== "#" && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub ↗
-            </a>
-          )}
-
-          {project.demo && project.demo !== "#" && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo ↗
-            </a>
-          )}
-
-        </div>
-
+            {hasDemo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open live demo of ${project.title}`}
+              >
+                Live Demo <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        )}
       </div>
-
     </article>
   );
 }

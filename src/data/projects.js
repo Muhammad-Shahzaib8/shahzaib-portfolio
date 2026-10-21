@@ -1,12 +1,14 @@
+
 const projects = [
   {
-    title: "Student Marks Management System",
-    category: "Web Application",
+    title: "MGSC Student Marks Management System",
+    category: "Live Web Application",
     description:
-      "A responsive web-based system for managing students, teachers, departments, marks, tests, and announcements. Teachers can manage academic records while students and parents can securely view results.",
+      "A responsive academic management platform for managing students, teachers, departments, marks, tests, and announcements. Teachers can manage academic records while students and parents can securely view results.",
     technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
-    github: "#",
-    demo: "#",
+    github:
+      "https://github.com/Muhammad-Shahzaib8/StudentMarksSystem",
+    demo: "http://mgscstudentportal.great-site.net/",
   },
 
   {
@@ -34,7 +36,7 @@ const projects = [
     title: "Django Blog CMS",
     category: "Content Management System",
     description:
-      "A modern blog management system with categories, trending and latest posts, comments, likes, ratings, and administrative content management.",
+      "A blog management system with categories, trending and latest posts, comments, likes, ratings, and administrative content management.",
     technologies: ["Python", "Django", "SQLite", "HTML/CSS"],
     github:
       "https://github.com/Muhammad-Shahzaib8/Blog-Management-System-Django",
@@ -58,6 +60,21 @@ const projects = [
     description:
       "A data analysis project exploring the potential impact of artificial intelligence and automation on future employment and job roles.",
     technologies: ["Python", "Pandas", "Data Analysis"],
+    github: "#",
+    demo: "#",
+  },
+
+  {
+    title: "Transformer-Based Weed Detection",
+    category: "AI Research / Computer Vision",
+    description:
+      "An ongoing research interest exploring transformer-based computer vision models for weed identification in agricultural fields, with the goal of supporting precision agriculture and targeted weed management.",
+    technologies: [
+      "Python",
+      "Deep Learning",
+      "Computer Vision",
+      "Transformers",
+    ],
     github: "#",
     demo: "#",
   },

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 function Contact() {
@@ -6,35 +7,43 @@ function Contact() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    const form = event.currentTarget;
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      console.error("Web3Forms access key is missing.");
+      setStatus("error");
+      return;
+    }
+
     setStatus("sending");
 
-    const form = event.target;
     const formData = new FormData(form);
+    const originalSubject = formData.get("subject");
 
-    formData.append(
-      "access_key",
-      import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
-    );
-
-    formData.append(
+    formData.set("access_key", accessKey);
+    formData.set(
       "subject",
-      `New Portfolio Message - ${formData.get("subject")}`
+      `New Portfolio Message - ${originalSubject}`
     );
-
-    formData.append("from_name", "Shahzaib Portfolio");
+    formData.set("from_name", "Shahzaib Portfolio");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const result = await response.json();
 
-      if (result.success) {
+      if (response.ok && result.success) {
         setStatus("success");
         form.reset();
       } else {
+        console.error("Web3Forms submission failed:", result);
         setStatus("error");
       }
     } catch (error) {
@@ -46,20 +55,14 @@ function Contact() {
   return (
     <section id="contact" className="contact section">
       <div className="section-container">
-
-        {/* Section Heading */}
         <div className="section-heading">
           <p>GET IN TOUCH</p>
           <h2>Let's Work Together</h2>
         </div>
 
         <div className="contact-wrapper">
-
-          {/* =========================
-              LEFT SIDE
-          ========================= */}
+          {/* LEFT SIDE */}
           <div className="contact-intro">
-
             <span className="contact-label">
               OPEN TO OPPORTUNITIES
             </span>
@@ -78,15 +81,12 @@ function Contact() {
             </p>
 
             <div className="contact-info">
-
               {/* Email */}
               <a
                 href="mailto:shahzaibmunir.official@gmail.com"
                 className="contact-info-item"
               >
-                <div className="contact-info-icon">
-                  @
-                </div>
+                <div className="contact-info-icon">@</div>
 
                 <div>
                   <span>Email</span>
@@ -103,103 +103,78 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="contact-info-item"
               >
-                <div className="contact-info-icon">
-                  GH
-                </div>
+                <div className="contact-info-icon">GH</div>
 
                 <div>
                   <span>GitHub</span>
-                  <strong>
-                    Muhammad-Shahzaib8
-                  </strong>
+                  <strong>Muhammad-Shahzaib8</strong>
                 </div>
               </a>
 
               {/* LinkedIn */}
-              <a
-                href="#"
-                className="contact-info-item"
-                onClick={(event) => event.preventDefault()}
-              >
-                <div className="contact-info-icon">
-                  in
-                </div>
+              <div className="contact-info-item">
+                <div className="contact-info-icon">in</div>
 
                 <div>
                   <span>LinkedIn</span>
                   <strong>
-                    Muhammad Shahzaib
+                    Add your LinkedIn profile URL
                   </strong>
                 </div>
-              </a>
-
+              </div>
             </div>
           </div>
 
-          {/* =========================
-              RIGHT SIDE
-          ========================= */}
+          {/* RIGHT SIDE */}
           <div className="contact-form-container">
-
             <div className="form-header">
-
               <span>01</span>
 
               <div>
                 <h3>Send a Message</h3>
-
                 <p>
                   Have an opportunity or project in mind?
                   Let's talk.
                 </p>
               </div>
-
             </div>
 
             <form
               className="contact-form"
               onSubmit={handleSubmit}
             >
-
-              {/* Name + Email */}
+              {/* Name and Email */}
               <div className="form-row">
-
                 <div className="form-group">
-                  <label htmlFor="name">
-                    Your Name
-                  </label>
+                  <label htmlFor="name">Your Name</label>
 
                   <input
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Enter your name"
+                    autoComplete="name"
                     required
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">
-                    Email Address
-                  </label>
+                  <label htmlFor="email">Email Address</label>
 
                   <input
                     type="email"
                     id="email"
                     name="email"
                     placeholder="Enter your email"
+                    autoComplete="email"
                     required
                   />
                 </div>
-
               </div>
 
               {/* Subject */}
               <div className="form-group">
-
-                <label htmlFor="subject">
-                  Subject
-                </label>
+                <label htmlFor="subject">Subject</label>
 
                 <input
                   type="text"
@@ -208,15 +183,11 @@ function Contact() {
                   placeholder="What would you like to discuss?"
                   required
                 />
-
               </div>
 
               {/* Message */}
               <div className="form-group">
-
-                <label htmlFor="message">
-                  Message
-                </label>
+                <label htmlFor="message">Message</label>
 
                 <textarea
                   id="message"
@@ -225,7 +196,6 @@ function Contact() {
                   placeholder="Write your message..."
                   required
                 ></textarea>
-
               </div>
 
               {/* Submit */}
@@ -245,28 +215,32 @@ function Contact() {
                 </span>
               </button>
 
-              {/* Success Message */}
+              {/* Success */}
               {status === "success" && (
-                <div className="form-message success-message">
+                <div
+                  className="form-message success-message"
+                  role="status"
+                  aria-live="polite"
+                >
                   ✓ Your message has been sent successfully.
                   I'll get back to you as soon as possible.
                 </div>
               )}
 
-              {/* Error Message */}
+              {/* Error */}
               {status === "error" && (
-                <div className="form-message error-message">
-                  ✕ Something went wrong. Please try again or
-                  contact me directly by email.
+                <div
+                  className="form-message error-message"
+                  role="alert"
+                  aria-live="assertive"
+                >
+                  ✕ Your message could not be sent. Please try
+                  again or contact me directly by email.
                 </div>
               )}
-
             </form>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
