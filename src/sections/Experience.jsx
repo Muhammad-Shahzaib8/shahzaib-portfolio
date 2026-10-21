@@ -28,7 +28,7 @@ function Experience() {
 
                 <div className="experience-meta">
                   <span className="experience-status">
-                    CURRENT ROLE
+                    Last Role
                   </span>
 
                   <span className="experience-date">
