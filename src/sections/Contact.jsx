@@ -118,7 +118,7 @@ function Contact() {
                 <div>
                   <span>LinkedIn</span>
                   <strong>
-                    Add your LinkedIn profile URL
+                    https://www.linkedin.com/in/muhammad-shahzaib-a72325240?utm_source=share_via&utm_content=profile&utm_medium=member_android
                   </strong>
                 </div>
               </div>
